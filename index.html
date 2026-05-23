@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eskul IPSI | Neon Warrior Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-pink: #ff007f;
+            --neon-pink-bright: #ff71b6;
+        }
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .font-cyber { font-family: 'Orbitron', sans-serif; }
+
+        /* Efek Neon Text */
+        .neon-text-bright {
+            color: #fff;
+            text-shadow: 
+                0 0 7px var(--neon-pink),
+                0 0 10px var(--neon-pink),
+                0 0 21px var(--neon-pink);
+        }
+
+        /* Border Neon */
+        .neon-border {
+            border: 2px solid var(--neon-pink);
+            box-shadow: 0 0 15px var(--neon-pink), inset 0 0 5px var(--neon-pink);
+        }
+
+        /* Animasi Berdenyut */
+        @keyframes pulse-neon {
+            0%, 100% { text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink); }
+            50% { text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink); opacity: 0.9; }
+        }
+        .animate-neon { animation: pulse-neon 2s infinite; }
+
+        .bg-dark-void { background-color: #050505; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: var(--neon-pink); border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-dark-void text-gray-100">
+
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-lg border-b border-[#ff007f]/30">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black font-cyber tracking-widest">
+                IPSI<span class="neon-text-bright animate-neon ml-2">SQUAD</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#home" class="hover:text-[#ff007f] transition">Home</a>
+                <a href="#pengurus" class="hover:text-[#ff007f] transition">Team</a>
+                <a href="#belajar" class="hover:text-[#ff007f] transition">Curriculum</a>
+                <a href="#materi" class="hover:text-[#ff007f] transition">Materials</a>
+                <a href="#galeri" class="hover:text-[#ff007f] transition">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#ff007f] opacity-10 blur-[150px]"></div>
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 relative z-10">
+            <div>
+                <span class="inline-block px-3 py-1 border border-[#ff007f] text-[#ff007f] text-xs font-bold rounded-full mb-4 shadow-[0_0_10px_#ff007f]">OFFICIAL EKSTRAKURIKULER</span>
+                <h1 class="text-6xl md:text-8xl font-black font-cyber mb-6 leading-none">
+                    PENCAK <br><span class="neon-text-bright">SILAT</span>
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-md">
+                    Ikatan Pencak Silat Indonesia. Wadah pengembangan karakter, fisik, dan pelestarian budaya bangsa dengan energi modern.
+                </p>
+                <button onclick="openModal()" class="neon-border bg-transparent text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-[#ff007f] transition duration-300 shadow-[0_0_20px_rgba(255,0,127,0.4)]">
+                    Gabung Sekarang
+                </button>
+            </div>
+            <div class="hidden md:block relative">
+                <div class="absolute -inset-4 bg-[#ff007f] opacity-20 blur-3xl rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80&w=800" alt="Silat" class="relative rounded-2xl border border-gray-800 grayscale hover:grayscale-0 transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <section id="pengurus" class="py-32 bg-white text-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-black font-cyber mb-16 italic underline decoration-[#ff007f] decoration-8 uppercase">Our Team</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="group text-center">
+                    <div class="relative w-48 h-48 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-[#ff007f] rounded-full blur-lg opacity-0 group-hover:opacity-40 transition"></div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" class="relative w-full h-full object-cover rounded-full border-4 border-[#ff007f]">
+                    </div>
+                    <h3 class="text-xl font-bold uppercase">Bpk. Eko Warasno</h3>
+                    <p class="text-gray-500 font-bold text-sm tracking-widest">PELATIH UTAMA</p>
+                </div>
+                <div class="group text-center">
+                    <div class="w-48 h-48 mx-auto mb-6">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover rounded-full border-4 border-gray-200 group-hover:border-[#ff007f] transition">
+                    </div>
+                    <h3 class="text-xl font-bold uppercase">Mbak. Riski</h3>
+                    <p class="text-gray-500 font-bold text-sm tracking-widest">PELATIH KEDUA</p>
+                </div>
+                <div class="group text-center">
+                    <div class="w-48 h-48 mx-auto mb-6">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover rounded-full border-4 border-gray-200 group-hover:border-[#ff007f] transition">
+                    </div>
+                    <h3 class="text-xl font-bold uppercase">Endhu Setya N.C</h3>
+                    <p class="text-gray-500 font-bold text-sm tracking-widest">SEKRETARIS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="belajar" class="py-32 bg-black">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-cyber font-bold mb-20 uppercase">Core <span class="neon-text-bright">Training</span></h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="p-10 border border-gray-800 hover:border-[#ff007f] transition group bg-gray-900/50">
+                    <div class="text-[#ff007f] text-4xl mb-4 group-hover:scale-125 transition">🛡️</div>
+                    <h3 class="font-bold text-xl mb-2 font-cyber">BELA DIRI</h3>
+                    <p class="text-gray-500 text-xs uppercase tracking-widest">Praktik teknik bertahan.</p>
+                </div>
+                <div class="p-10 border border-gray-800 hover:border-[#ff007f] transition group bg-gray-900/50">
+                    <div class="text-[#ff007f] text-4xl mb-4 group-hover:scale-125 transition">🎭</div>
+                    <h3 class="font-bold text-xl mb-2 font-cyber">SENI</h3>
+                    <p class="text-gray-500 text-xs uppercase tracking-widest">Keindahan gerak & jurus.</p>
+                </div>
+                <div class="p-10 border border-gray-800 hover:border-[#ff007f] transition group bg-gray-900/50">
+                    <div class="text-[#ff007f] text-4xl mb-4 group-hover:scale-125 transition">🧠</div>
+                    <h3 class="font-bold text-xl mb-2 font-cyber">MENTAL</h3>
+                    <p class="text-gray-500 text-xs uppercase tracking-widest">Etika & Kedisiplinan.</p>
+                </div>
+                <div class="p-10 border border-gray-800 hover:border-[#ff007f] transition group bg-gray-900/50">
+                    <div class="text-[#ff007f] text-4xl mb-4 group-hover:scale-125 transition">💪</div>
+                    <h3 class="font-bold text-xl mb-2 font-cyber">FISIK</h3>
+                    <p class="text-gray-500 text-xs uppercase tracking-widest">Kekuatan & Stamina.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="materi" class="py-32 bg-gray-100 text-black">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="neon-border p-2 bg-black">
+                    <img src="asets/imbu9mpudspulfjcrf3p.jpg" class="grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-black mb-6 uppercase font-cyber">Materi <span class="text-[#ff007f]">Utama</span></h2>
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-[#ff007f] pl-4">
+                            <h4 class="font-bold text-lg">Kuda-Kuda & Langkah</h4>
+                            <p class="text-sm text-gray-600">Teknik dasar perpindahan berat badan dan posisi kaki.</p>
+                        </div>
+                        <div class="border-l-4 border-[#ff007f] pl-4">
+                            <h4 class="font-bold text-lg">Jurus Tunggal Baku</h4>
+                            <p class="text-sm text-gray-600">Rangkaian 100 gerakan seni yang diakui secara nasional.</p>
+                        </div>
+                        <div class="border-l-4 border-[#ff007f] pl-4">
+                            <h4 class="font-bold text-lg">Teknik Sambung (Tanding)</h4>
+                            <p class="text-sm text-gray-600">Strategi serangan, tangkisan, dan jatuhan dalam arena.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri" class="py-32 bg-dark-void">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-3xl font-cyber neon-text-bright mb-16 uppercase tracking-widest">Activity Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="asets/images.jpg" class="w-full h-64 object-cover rounded border border-gray-800 hover:border-[#ff007f] transition cursor-pointer">
+                <img src="asets/Pencak-Silat-Militer-.webp"  class="w-full h-64 object-cover rounded border border-gray-800 hover:border-[#ff007f] transition cursor-pointer">
+                <img src="asets/silat 2.jpg" class="w-full h-64 object-cover rounded border border-gray-800 hover:border-[#ff007f] transition cursor-pointer">
+                <img src="asets/images (1).jpg" class="w-full h-64 object-cover rounded border border-gray-800 hover:border-[#ff007f] transition cursor-pointer">
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-gray-900 text-center">
+        <p class="text-xs tracking-[0.3em] text-gray-600 uppercase">&copy; 2026 IPSI MODERN - Heritage In Glow</p>
+    </footer>
+
+    <div id="modalDaftar" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/95 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="relative bg-gray-900 border-2 border-[#ff007f] p-8 rounded-2xl w-full max-w-md shadow-[0_0_50px_rgba(255,0,127,0.4)]">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-[#ff007f]">✕</button>
+            <h2 class="font-cyber text-2xl text-white mb-6 neon-text-bright text-center italic">REGISTRATION</h2>
+            <form id="formIpsi" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-[#ff007f] uppercase mb-1 tracking-widest">Nama Lengkap</label>
+                    <input type="text" id="nama" required class="w-full bg-black border border-gray-800 p-3 rounded text-white focus:border-[#ff007f] outline-none transition shadow-inner">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-[#ff007f] uppercase mb-1 tracking-widest">Kelas</label>
+                    <input type="text" id="kelas" required class="w-full bg-black border border-gray-800 p-3 rounded text-white focus:border-[#ff007f] outline-none transition shadow-inner">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-[#ff007f] uppercase mb-1 tracking-widest">Alasan Bergabung</label>
+                    <textarea id="alasan" rows="3" class="w-full bg-black border border-gray-800 p-3 rounded text-white focus:border-[#ff007f] outline-none transition shadow-inner"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#ff007f] text-white font-black py-4 rounded uppercase tracking-[0.2em] hover:brightness-125 transition shadow-[0_0_20px_rgba(255,0,127,0.5)]">
+                    KIRIM DATA
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modalDaftar');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('formIpsi').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama').value;
+            const kelas = document.getElementById('kelas').value;
+            const alasan = document.getElementById('alasan').value;
+            
+            // Masukkan nomor WA Admin di sini (contoh: 628123456789)
+            const noWa = "628123456789"; 
+            const pesan = `PENDAFTARAN IPSI%0A--------------------%0A*Nama:* ${nama}%0A*Kelas:* ${kelas}%0A*Alasan:* ${alasan}`;
+            
+            window.open(`https://wa.me/${noWa}?text=${pesan}`, '_blank');
+            closeModal();
+        });
+    </script>
+
+</body>
+</html>
